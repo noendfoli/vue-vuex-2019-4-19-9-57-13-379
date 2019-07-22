@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Vuex from 'vuex'
+import axios from 'axios'
+Vue.prototype.$axios = axios
 Vue.use(Vuex)
 
 Vue.config.productionTip = false
@@ -27,10 +29,12 @@ const store = new Vuex.Store({
     all(state){
       state.showItems = state.listItems.map(a => a) 
     },
-  
     delIiem(state,item){
       state.listItems.splice(state.listItems.indexOf(item),1);
       state.showItems.splice(state.showItems.indexOf(item),1);
+    },
+    getData(state,data){
+      
     }
   }
 })

@@ -19,9 +19,15 @@ export default {
    foot,
    items
  },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  created(){
+    this.getHttp()
+  },
+  methods:{
+    getHttp(){
+      let destination =  "http://localhost:8080/to-do-lists"
+      this.$axios.get(api).then((response)=>{
+        this.$store.commit("getData",response.data)
+      })
     }
   }
 }
