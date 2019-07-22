@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+
 Vue.prototype.$axios = axios
 Vue.use(Vuex)
 
@@ -34,7 +35,17 @@ const store = new Vuex.Store({
       state.showItems.splice(state.showItems.indexOf(item),1);
     },
     getData(state,data){
+      console.log(data)
+      data.map((a) =>{
+        let item = {
+          content: a.item,
+          isChecked: false
+       }
+        state.showItems.push(item),
+        state.listItems.push(item)
+      }
       
+      )
     }
   }
 })

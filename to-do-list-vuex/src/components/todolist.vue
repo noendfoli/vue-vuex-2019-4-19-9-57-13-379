@@ -24,8 +24,8 @@ export default {
   },
   methods:{
     getHttp(){
-      let destination =  "http://localhost:8080/to-do-lists"
-      this.$axios.get(api).then((response)=>{
+      let destination =  "http://localhost:8080/todolists"
+      this.$axios.get(destination).then((response)=>{
         this.$store.commit("getData",response.data)
       })
     }
