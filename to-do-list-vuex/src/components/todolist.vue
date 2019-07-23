@@ -3,6 +3,7 @@
     <heads></heads>
     <items></items>
     <foot></foot>
+    <router-view></router-view>
 </div>
 </template>
 
@@ -10,8 +11,6 @@
 import items from './items'
 import heads from './header'
 import foot from './footer'
-
-
 export default {
   name: 'HelloWorld',
   components:{
@@ -20,16 +19,8 @@ export default {
    items
  },
   created(){
-    this.getHttp()
+    this.$store.dispatch('getlist')
   },
-  methods:{
-    getHttp(){
-      let destination =  "http://localhost:8080/todolists"
-      this.$axios.get(destination).then((response)=>{
-        this.$store.commit("getData",response.data)
-      })
-    }
-  }
 }
 
 </script>

@@ -25,12 +25,16 @@ export default {
  },
  methods:{
    handleclick(){
-     let item = {
+     if(msg ===''){
+       alert('it not null')
+     }else{
+        let item = {
         content: this.msg,
         isChecked: false
      }
-     this.$store.commit('addItem',item)
+     this.$store.dispatch('addItem',item)
      this.msg = ''
+     }
    },
  }
 }

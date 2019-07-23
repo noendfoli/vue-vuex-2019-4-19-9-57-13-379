@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <todolist></todolist>
+    <router-link to="/welcome">Go to Welcome</router-link>
+    <router-link to="/home">Go to Home</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import todolist from './components/todolist.vue'
-
+import VueRouter from 'vue-router'
 export default {
   name: 'app',
-  components: {
-    todolist
-  }
+  created(){
+    this.$store.dispath('getlist')
+  }    
 }
 </script>
 
