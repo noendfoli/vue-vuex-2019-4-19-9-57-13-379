@@ -17,14 +17,7 @@
 <script>
 export default {
   props:['licontent','liindex'],
-  data(){
-   return{
-     msg:'',
-     list:[],
-     showList:[]
-   }
- },
- methods:{
+  methods:{
     complete(){
        this.$store.commit('complete')
     },

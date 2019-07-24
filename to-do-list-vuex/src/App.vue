@@ -7,18 +7,17 @@
 </template>
 
 <script>
-import VueRouter from 'vue-router'
 export default {
-  name: 'app',
-  created(){
-    this.$store.dispath('getlist')
-  }    
-}
+  name: "app",
+  created() {
+    this.$store.dispatch("getlist");
+  }
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -1,19 +1,23 @@
-import foo from '../components/foo'
-import bar from '../components/bar'
-export default new Router({
-    mode:"history",
-    base:Process.env.BASE_URL,
-    routes:[
-        {
-            path:'/home/:username',
-            name:"home",
-            componet:foo
-        },
-        {
-            path:'/welcome',
-            name:"welcome",
-            componet:bar
-        }
-    ]
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from '../components/Home.vue'
+import Welcome from '../components/welcome.vue'
 
+Vue.use(VueRouter)
+
+export default new VueRouter({
+  routes: [
+    {
+      path: '/home/:username',
+      name: 'home',
+      props: true,
+      component: Home
+    },
+    {
+      path: '/welcome',
+      name: 'welcome',
+      props: true,
+      component: Welcome
+    }
+  ]
 })

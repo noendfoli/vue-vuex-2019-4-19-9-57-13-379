@@ -11,6 +11,7 @@
 import items from './items'
 import heads from './header'
 import foot from './footer'
+import Vuex from 'vuex'
 export default {
   name: 'HelloWorld',
   components:{
@@ -22,7 +23,6 @@ export default {
     this.$store.dispatch('getlist')
   },
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
