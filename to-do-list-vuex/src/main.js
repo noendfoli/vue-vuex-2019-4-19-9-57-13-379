@@ -1,40 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Vuex from 'vuex'
+import axios from 'axios'
+import store from './store/store'
+import router from './store/route'
+import Button from "ant-design-vue/lib/button";
+import "ant-design-vue/dist/antd.css";
+Vue.prototype.$axios = axios
+Vue.component(Button.name, Button);
 Vue.use(Vuex)
-
 Vue.config.productionTip = false
-const store = new Vuex.Store({
-  state: {
-    showItems: [],
-    listItems:[]
-  },
-  mutations: {
-    addItem(state,item){
-      state.showItems.push(item)
-      state.listItems.push(item)
-    },
-    complete(state){
-      state.showItems = state.listItems.filter((item)=>{
-        return item.isChecked;
-      })
-    },
-    active(state){
-      state.showItems = state.listItems.filter((item)=>{
-        return !item.isChecked;
-      })
-    },
-    all(state){
-      state.showItems = state.listItems.map(a => a) 
-    },
-  
-    delIiem(state,item){
-      state.listItems.splice(state.listItems.indexOf(item),1);
-      state.showItems.splice(state.showItems.indexOf(item),1);
-    }
-  }
-})
+
 new Vue({
   store,
+  router,
   render: h => h(App),
 }).$mount('#app')

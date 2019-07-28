@@ -3,6 +3,7 @@
     <heads></heads>
     <items></items>
     <foot></foot>
+    <router-view></router-view>
 </div>
 </template>
 
@@ -10,8 +11,7 @@
 import items from './items'
 import heads from './header'
 import foot from './footer'
-
-
+import Vuex from 'vuex'
 export default {
   name: 'HelloWorld',
   components:{
@@ -19,13 +19,10 @@ export default {
    foot,
    items
  },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  created(){
+    this.$store.dispatch('getlist')
+  },
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

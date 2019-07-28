@@ -2,13 +2,13 @@
 <div>
      <ul id="filters">
         <li>
-             <a @click="all" >ALL</a>
+            <a-button type="primary" @click="all">ALL</a-button>
          </li>
          <li>
-             <a @click="active" >Active</a>
+              <a-button type="primary" @click="active">Active</a-button>
         </li>
         <li>
-            <a @click="complete">Complete</a>
+            <a-button type="primary" @click="complete">Complete</a-button>
         </li>
     </ul>
   </div>
@@ -17,14 +17,7 @@
 <script>
 export default {
   props:['licontent','liindex'],
-  data(){
-   return{
-     msg:'',
-     list:[],
-     showList:[]
-   }
- },
- methods:{
+  methods:{
     complete(){
        this.$store.commit('complete')
     },
